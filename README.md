@@ -33,9 +33,7 @@ This application has been deployed in the website (https://www.jjbioenergy.org/)
 
 `sudo chmod -R 777 storage`
 
-`sudo chmod -R 775 public/excel`
-
-`sudo chown -R www-data:root public/excel`
+`sudo chmod -R 777 public/excel`
 
 8. initialize database tables and seeds
 

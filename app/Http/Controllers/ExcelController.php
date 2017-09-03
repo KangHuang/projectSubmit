@@ -130,8 +130,6 @@ class ExcelController extends Controller {
             $lowestRow = $lowestCoordinate[0];
             $lowestCol = $lowestCoordinate[1];
 
-            echo $highestRow.' '.$highestCol.' '.$lowestRow.' '.$lowestCol;
-
 
             //enter input data and calculate
             if (isset($_POST['cellvalue'])) {
