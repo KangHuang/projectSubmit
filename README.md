@@ -78,5 +78,7 @@ Then performing testing at localhost.
 
 * The testing PayPal application id and secret are in `__construct` function of `PaymentContoller` class at `app/Controllers/PaymentController.php`, change it when needed.
 
+* The testing email for sending email is configured in `config/mail.php`. Replace it if needed. 
+
 
 
