@@ -27,7 +27,7 @@
                     <p>{!! $post->description !!}</p>
                 </div>
                 <div class="col-lg-12 text-center">
-                    {!! link_to('service/run/'.$post->id, trans('front/blog.button'), ['class' => 'btn btn-default btn-lg']) !!}
+                        {!! link_to('service/run/'.$post->id, $post->free ? 'Free' : '&pound;'.$post->price, ['class' => 'btn btn-default btn-lg']) !!}
 
                     <hr>
                 </div>

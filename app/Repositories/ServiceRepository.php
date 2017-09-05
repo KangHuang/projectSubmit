@@ -62,7 +62,7 @@ class ServiceRepository extends BaseRepository {
     private function queryActiveWithUserOrderByDate()
     {
         return $this->model
-            ->select('id', 'created_at', 'updated_at','filename', 'title', 'price', 'provider_id', 'description')
+            ->select('id', 'created_at', 'updated_at','filename','free', 'title', 'price', 'provider_id', 'description')
                         ->whereActive(true)
                         ->with('provider')
                         ->latest();
@@ -216,11 +216,11 @@ class ServiceRepository extends BaseRepository {
      * @param  int    $id
      * @return void
      */
-    public function updateSeen($inputs, $id)
+    public function updateFree($inputs, $id)
     {
         $service = $this->getById($id);
 
-        $service->seen = $inputs['seen'] == 'true';
+        $service->free = $inputs['free'] == 'true';
 
         $service->save();
     }

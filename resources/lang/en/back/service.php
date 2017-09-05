@@ -17,6 +17,7 @@ return [
 	'preview' => 'Preview',
 	'no' => 'No',
 	'see' => 'See',
+        'free' => 'Free',
 	'edit' => 'Edit',
 	'destroy' => 'Destroy',
         'management' => 'Management',

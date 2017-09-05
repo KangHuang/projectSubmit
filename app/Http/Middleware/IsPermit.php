@@ -33,6 +33,13 @@ class IsPermit {
      */
     public function handle($request, Closure $next) {
         
+        
+        //if the service is free
+        if ($this->service_gestion->getById($request->service_id)->free) {
+            return $next($request);
+        }
+        
+        
         //if manager is permitted
         if (session('statut') === 'manager') {
             $user_id = auth()->guard('users')->id();

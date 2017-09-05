@@ -19,8 +19,8 @@ class CreateServicesTable extends Migration {
 			$table->text('description');
                         $table->string('filename', 64)->unique();
                         $table->float('price')->unsigned();
-			$table->boolean('seen')->default(false);
-			$table->boolean('active')->default(false);
+			$table->boolean('free')->default(false);
+			$table->boolean('active')->default(true);
 			$table->integer('provider_id')->unsigned();
                         $table->string('hid_fin', 512);
                         $table->string('hid_tec', 512);

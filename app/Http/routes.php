@@ -38,6 +38,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //ajax
     Route::put('postactive/{id}', 'ServiceController@updateActive', ['middleware' => ['permit', 'admin']]);
+    Route::put('postfree/{id}', 'ServiceController@updateFree', ['middleware' => ['permit', 'admin']]);
     Route::post('postrelation/{user_id}', 'ServiceController@relation', ['middleware' => ['permit', 'admin']]);
 
 

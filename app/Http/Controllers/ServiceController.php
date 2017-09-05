@@ -178,6 +178,22 @@ class ServiceController extends Controller {
 
         return response()->json();
     }
+    
+    /**
+     * Update "active" for the specified resource in storage.
+     *
+     * @param  Illuminate\Http\Request $request
+     * @param  int  $id
+     * @return Response
+     */
+    public function updateFree(
+    Request $request, $id) {
+        $post = $this->service_handler->getById($id);
+        
+        $this->service_handler->updateFree($request->all(), $id);
+
+        return response()->json();
+    }
 
     /**
      * Remove the specified service

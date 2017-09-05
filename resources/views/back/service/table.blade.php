@@ -3,6 +3,7 @@
               <td class="text-primary"><strong>{{ $post->title }}</strong></td>
               <td>{{ $post->created_at }}</td> 
               <td>{!! Form::checkbox('active', $post->id, $post->active) !!}</td>
+              <td>{!! Form::checkbox('free', $post->id, $post->free) !!}</td>
                <td>
               {!! Form::open(['method' => 'get', 'url' => 'service/edit/'.$post->id]) !!}
                 {!! Form::submit(trans('back/service.edit')) !!}

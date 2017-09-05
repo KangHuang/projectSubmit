@@ -42,7 +42,7 @@
 
     echo '<h5>output</h5>';
 
-    if ($user_role == 'tec' || $user_role == 'manager' || $user_role == 'admin') {
+    if ($user_role == 'tec' || $user_role == 'manager' || $user_role == 'admin' || $service->free) {
         echo '<center>technical information</center>';
         echo "<form>";
         echo '<table>';
@@ -61,7 +61,7 @@
         echo '</table>';
         echo "</form><br>";
     }
-    if ($user_role == 'fin' || $user_role == 'manager' || $user_role == 'admin') {
+    if ($user_role == 'fin' || $user_role == 'manager' || $user_role == 'admin' || $service->free) {
         echo '<center>financial information</center>';
         echo "<form>";
         echo '<table>';

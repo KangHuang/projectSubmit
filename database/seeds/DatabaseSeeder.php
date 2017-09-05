@@ -109,11 +109,21 @@ class DatabaseSeeder extends Seeder {
 		]);
 
 		Service::create([
-			'title' => 'Service demo',
+			'title' => 'Free Service demo',
 			'description' => 'Test the first proprietary service',
 			'filename' => 'demo.xlsx', 
+                        'price' => 0.02,
+                        'free' => true,
+			'provider_id' => 1,
+                        'hid_tec' => 'A2,B2,C2',
+                        'hid_fin' => 'A3,B3,C3',
+		]);
+                
+                Service::create([
+			'title' => 'Charge service demo',
+			'description' => 'Test the service woth charge',
+			'filename' => 'formal3.xlsx', 
                         'price' => 0.01,
-			'active' => true,
 			'provider_id' => 1,
                         'hid_tec' => 'A2,B2,C2',
                         'hid_fin' => 'A3,B3,C3',

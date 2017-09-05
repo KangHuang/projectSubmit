@@ -27,6 +27,9 @@
               {{ trans('back/service.published') }}
             </th>
             <th>
+              {{ trans('back/service.free') }}
+            </th>
+            <th>
               {{ trans('back/service.details') }}
             </th> 
               <th>
@@ -71,6 +74,26 @@
           alert('{{ trans('back/service.fail') }}');
         });
       });
+      $(document).on('change', ':checkbox[name="free"]', function() {
+        $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
+        var token = $('input[name="_token"]').val();
+        $.ajax({
+          url: '{{ url('postfree') }}' + '/' + this.value,
+          type: 'PUT',
+          data: "free=" + this.checked + "&_token=" + token
+        })
+        .done(function() {
+          $('.fa-spin').remove();
+          $('input:checkbox[name="free"]:hidden').show();
+        })
+        .fail(function() {
+          $('.fa-spin').remove();
+          chk = $('input:checkbox[name="free"]:hidden');
+          chk.show().prop('checked', chk.is(':checked') ? null:'checked').parents('tr').toggleClass('warning');
+          alert('{{ trans('back/service.fail') }}');
+        });
+      });
+      
      })
 
   </script>
